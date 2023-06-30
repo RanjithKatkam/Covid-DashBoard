@@ -1,0 +1,82 @@
+.header-main-container {
+  height: 80px;
+  left: 0px;
+  top: 0px;
+  border-radius: 0px;
+  background: #1e1e30;
+  padding: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-heading {
+  padding-bottom: 10px;
+}
+
+.covid19 {
+  font-family: 'Bree Serif';
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #f8fafc;
+}
+
+.india {
+  font-family: 'Bree Serif';
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #3b82f6;
+}
+
+.logo-name-container {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-list-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+  width: 12%;
+  margin-right: 120px;
+}
+
+.active-header-link-name {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #f8fafc;
+}
+
+.non-active-header-link-name {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #94a3b8;
+}
+
+.link {
+  text-decoration: none;
+  color: none;
+}
+
+.header-button {
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  border: none;
+}

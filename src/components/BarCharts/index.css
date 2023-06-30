@@ -1,0 +1,14 @@
+.bar {
+  font-family: 'Bree Serif';
+  color: crimson;
+}
+
+.barChart-container {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 30px;
+}

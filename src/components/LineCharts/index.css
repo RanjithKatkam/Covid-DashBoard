@@ -1,0 +1,64 @@
+.confirmed-chart-container {
+  width: 100%;
+  display: flex;
+  margin-top: 90px;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  background-color: #331427;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+.active-chart-container {
+  width: 100%;
+  display: flex;
+  margin-top: 90px;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  background-color: #132240;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+.deceased-chart-container {
+  width: 100%;
+  display: flex;
+  margin-top: 90px;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  background-color: #1c1c2b;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+.recovered-chart-container {
+  width: 100%;
+  display: flex;
+  margin-top: 90px;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  background-color: #182829;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+.tested-chart-container {
+  width: 100%;
+  display: flex;
+  margin-top: 90px;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  background-color: #230f41;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+.chartsList-container {
+  margin-bottom: 30px;
+  height: 2080px;
+}

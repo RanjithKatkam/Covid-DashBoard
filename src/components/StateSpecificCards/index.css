@@ -1,0 +1,85 @@
+.state-card-normal-class {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 230px;
+  height: 200px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.state-deceased-cases-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #212230;
+  width: 230px;
+  height: 200px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.state-recovered-cases-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #182829;
+  width: 230px;
+  cursor: pointer;
+  border-radius: 10px;
+  height: 200px;
+}
+
+.state-active-cases-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #132240;
+  width: 230px;
+  cursor: pointer;
+  border-radius: 10px;
+  height: 200px;
+}
+
+.state-confirmed-cases-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #331427;
+  width: 230px;
+  cursor: pointer;
+  border-radius: 10px;
+  height: 200px;
+}
+
+.cards-list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  align-items: center;
+}
+
+.select-card-list-confirmed :hover {
+  background-color: #331427;
+}
+
+.select-card-list-active :hover {
+  background-color: #132240;
+}
+
+.select-card-list-recovered :hover {
+  background-color: #182829;
+}
+
+.select-card-list-deceased :hover {
+  background-color: #212230;
+}

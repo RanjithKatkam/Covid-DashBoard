@@ -1,0 +1,169 @@
+.state-details-main-container {
+  background-color: #161625;
+  width: 100vw;
+  height: auto;
+}
+
+.state-loader-container {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.state-details-sub-container {
+  height: auto;
+  width: 100%;
+  padding: 30px 90px;
+}
+
+.stateName-date-tested {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stateName {
+  height: Fixed (84px);
+  padding: 5px 20px;
+  border-radius: 32px;
+  background-color: #0284c729;
+}
+
+.state-name {
+  font-family: 'HK Grotesk';
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #0ea5e9;
+}
+
+.formatted-date {
+  color: #cbd5e1;
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  margin-left: 15px;
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+.tested-heading {
+  font-family: 'Roboto';
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: right;
+  margin-right: 0px;
+  margin-bottom: 1px;
+  color: #94a3b8;
+}
+
+.tested-count {
+  font-family: 'Roboto';
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  margin-top: 4px;
+  text-align: right;
+  color: #94a3b8;
+}
+
+.select-category-container {
+  height: 230px;
+  width: 80%;
+  margin: auto;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-districts-details {
+  margin-top: 100px;
+}
+
+.top-districts-heading {
+  font-family: 'Roboto';
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.confirmedHeading {
+  color: #ff073a;
+}
+
+.activeHeading {
+  color: #007bff;
+}
+
+.recoveredHeading {
+  color: #28a745;
+}
+
+.deceasedHeading {
+  color: #6c757d;
+}
+
+.top-districts-list-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-left: 0px;
+}
+
+.count-stateName {
+  margin: 0px 10px;
+  width: 18%;
+  display: flex;
+  align-items: center;
+}
+
+.top-dist-count {
+  font-family: 'Roboto';
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #94a3b8;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.top-dist-state {
+  color: #94a3b8;
+  font-family: 'Bree Serif';
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-top: 5px;
+}
+
+.daily-spread-heading {
+  color: #cbd5e1;
+  font-family: Roboto;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-top: 140px;
+  margin-bottom: 0px;
+}
+
+.charts-container {
+  margin-bottom: 20px;
+}
