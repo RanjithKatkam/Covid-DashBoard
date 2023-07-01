@@ -249,6 +249,7 @@ class Home extends Component {
         population: meta.population,
       }
     })
+    console.log(statesList.length, responseData)
 
     this.setState({
       activeCases: totalActive,

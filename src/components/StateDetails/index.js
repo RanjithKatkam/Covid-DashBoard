@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
-
+import {Redirect} from 'react-router-dom'
 import Header from '../Header'
 import StateSpecificCards from '../StateSpecificCards'
 import BarCharts from '../BarCharts'
@@ -13,6 +13,7 @@ const apiConstants = {
   initial: 'INITIAL',
   loading: 'LOADING',
   success: 'SUCCESS',
+  failed: 'FAILURE',
 }
 
 const statesList = [
@@ -210,77 +211,82 @@ class StateDetails extends Component {
     const response = await fetch(url, options)
     const responseData = await response.json()
     const requiredState = responseData[stateCode]
+    console.log(requiredState)
     const stateNameObject = statesList.filter(
       eachItem => eachItem.state_code === stateCode,
     )
-    const stateName = stateNameObject[0].state_name
-    const lastUpdated = requiredState.meta.last_updated
-    const date = new Date(lastUpdated)
-    const formattedDate = `Last updated on ${
-      monthNames[date.getMonth()]
-    } ${date.getDate()} ${date.getFullYear()}.`
-    const totalTestedCases = requiredState.total.tested
+    if (stateNameObject.length !== 0) {
+      const stateName = stateNameObject[0].state_name
+      const lastUpdated = requiredState.meta.last_updated
+      const date = new Date(lastUpdated)
+      const formattedDate = `Last updated on ${
+        monthNames[date.getMonth()]
+      } ${date.getDate()} ${date.getFullYear()}.`
+      const totalTestedCases = requiredState.total.tested
 
-    const cardConfirmedCases = requiredState.total.confirmed
-    const cardActiveCases =
-      requiredState.total.confirmed -
-      (requiredState.total.deceased + requiredState.total.recovered)
-    const cardRecoveredCases = requiredState.total.recovered
-    const cardDeceasedCases = requiredState.total.deceased
+      const cardConfirmedCases = requiredState.total.confirmed
+      const cardActiveCases =
+        requiredState.total.confirmed -
+        (requiredState.total.deceased + requiredState.total.recovered)
+      const cardRecoveredCases = requiredState.total.recovered
+      const cardDeceasedCases = requiredState.total.deceased
 
-    const listKeys = Object.keys(requiredState.districts)
+      const listKeys = Object.keys(requiredState.districts)
 
-    const confirmedCases = listKeys.map(eachItem => {
-      const {total} = requiredState.districts[eachItem]
-      return {
-        stateName: eachItem,
-        casesCount: total.confirmed ? total.confirmed : 0,
-      }
-    })
-    const activeCases = listKeys.map(eachItem => {
-      const {total} = requiredState.districts[eachItem]
-      return {
-        stateName: eachItem,
-        casesCount:
-          total.confirmed && total.recovered && total.deceased
-            ? total.confirmed - (total.recovered + total.deceased)
-            : 0,
-      }
-    })
-    const recoveredCases = listKeys.map(eachItem => {
-      const {total} = requiredState.districts[eachItem]
-      return {
-        stateName: eachItem,
-        casesCount: total.recovered ? total.recovered : 0,
-      }
-    })
-    const deceasedCases = listKeys.map(eachItem => {
-      const {total} = requiredState.districts[eachItem]
-      return {
-        stateName: eachItem,
-        casesCount: total.deceased ? total.deceased : 0,
-      }
-    })
+      const confirmedCases = listKeys.map(eachItem => {
+        const {total} = requiredState.districts[eachItem]
+        return {
+          stateName: eachItem,
+          casesCount: total.confirmed ? total.confirmed : 0,
+        }
+      })
+      const activeCases = listKeys.map(eachItem => {
+        const {total} = requiredState.districts[eachItem]
+        return {
+          stateName: eachItem,
+          casesCount:
+            total.confirmed && total.recovered && total.deceased
+              ? total.confirmed - (total.recovered + total.deceased)
+              : 0,
+        }
+      })
+      const recoveredCases = listKeys.map(eachItem => {
+        const {total} = requiredState.districts[eachItem]
+        return {
+          stateName: eachItem,
+          casesCount: total.recovered ? total.recovered : 0,
+        }
+      })
+      const deceasedCases = listKeys.map(eachItem => {
+        const {total} = requiredState.districts[eachItem]
+        return {
+          stateName: eachItem,
+          casesCount: total.deceased ? total.deceased : 0,
+        }
+      })
 
-    recoveredCases.sort((a, b) => b.casesCount - a.casesCount)
-    confirmedCases.sort((a, b) => b.casesCount - a.casesCount)
-    activeCases.sort((a, b) => b.casesCount - a.casesCount)
-    deceasedCases.sort((a, b) => b.casesCount - a.casesCount)
+      recoveredCases.sort((a, b) => b.casesCount - a.casesCount)
+      confirmedCases.sort((a, b) => b.casesCount - a.casesCount)
+      activeCases.sort((a, b) => b.casesCount - a.casesCount)
+      deceasedCases.sort((a, b) => b.casesCount - a.casesCount)
 
-    this.setState({
-      stateName,
-      formattedDate,
-      totalTestedCases,
-      cardActiveCases,
-      cardConfirmedCases,
-      cardDeceasedCases,
-      cardRecoveredCases,
-      topRecoveredCases: recoveredCases,
-      topConfirmedCases: confirmedCases,
-      topDeceasedCases: deceasedCases,
-      topActiveCases: activeCases,
-      apiStatus: apiConstants.success,
-    })
+      this.setState({
+        stateName,
+        formattedDate,
+        totalTestedCases,
+        cardActiveCases,
+        cardConfirmedCases,
+        cardDeceasedCases,
+        cardRecoveredCases,
+        topRecoveredCases: recoveredCases,
+        topConfirmedCases: confirmedCases,
+        topDeceasedCases: deceasedCases,
+        topActiveCases: activeCases,
+        apiStatus: apiConstants.success,
+      })
+    } else {
+      this.setState({apiStatus: apiConstants.failed})
+    }
   }
 
   onChangeSpecificCard = id => {
@@ -395,6 +401,8 @@ class StateDetails extends Component {
     )
   }
 
+  renderFailureView = () => <Redirect to="/not-found" />
+
   renderStateRoute = () => {
     const {apiStatus} = this.state
 
@@ -403,6 +411,8 @@ class StateDetails extends Component {
         return this.renderLoadingView()
       case apiConstants.success:
         return this.renderSuccessView()
+      case apiConstants.failed:
+        return this.renderFailureView()
       default:
         return null
     }
