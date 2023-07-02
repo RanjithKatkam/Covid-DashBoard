@@ -307,52 +307,60 @@ class Home extends Component {
             ))}
           </ul>
         ) : null}
-        <div className="covid-cases-details-container">
-          <div
-            testid="countryWideConfirmedCases"
-            className="confirmed-cases-container"
-          >
-            <p className="confirmed-cases-heading">Confirmed</p>
-            <img
-              src="https://res.cloudinary.com/dwgg5pyqk/image/upload/v1687427024/check-mark_1_iedze6.png"
-              alt="country wide confirmed cases pic"
-            />
-            <p className="confirmed-cases-para">{confirmedCases}</p>
-          </div>
-          <div
-            testid="countryWideActiveCases"
-            className="confirmed-cases-container"
-          >
-            <p className="active-cases-heading">Active</p>
-            <img
-              src="https://res.cloudinary.com/dwgg5pyqk/image/upload/v1687427084/protection_1_q15oqc.png"
-              alt="country wide active cases pic"
-            />
-            <p className="active-cases-para">{activeCases}</p>
-          </div>
-          <div
-            testid="countryWideRecoveredCases"
-            className="confirmed-cases-container"
-          >
-            <p className="recovered-cases-heading">Recovered</p>
-            <img
-              src="https://res.cloudinary.com/dwgg5pyqk/image/upload/v1687427084/recovered_1_bhbphf.png"
-              alt="country wide recovered cases pic"
-            />
-            <p className="recovered-cases-para">{recoveredCases}</p>
-          </div>
-          <div
-            testid="countryWideDeceasedCases"
-            className="confirmed-cases-container"
-          >
-            <p className="deceased-cases-heading">Deceased</p>
-            <img
-              src="https://res.cloudinary.com/dwgg5pyqk/image/upload/v1687427094/breathing_1_dqkfdm.png"
-              alt="country wide deceased cases pic"
-            />
-            <p className="deceased-cases-para">{deceasedCases}</p>
-          </div>
-        </div>
+        <ul className="covid-cases-details-container">
+          <li>
+            <div
+              testid="countryWideConfirmedCases"
+              className="confirmed-cases-container"
+            >
+              <p className="confirmed-cases-heading">Confirmed</p>
+              <img
+                src="https://res.cloudinary.com/dwgg5pyqk/image/upload/v1687427024/check-mark_1_iedze6.png"
+                alt="country wide confirmed cases pic"
+              />
+              <p className="confirmed-cases-para">{confirmedCases}</p>
+            </div>
+          </li>
+          <li>
+            <div
+              testid="countryWideActiveCases"
+              className="confirmed-cases-container"
+            >
+              <p className="active-cases-heading">Active</p>
+              <img
+                src="https://res.cloudinary.com/dwgg5pyqk/image/upload/v1687427084/protection_1_q15oqc.png"
+                alt="country wide active cases pic"
+              />
+              <p className="active-cases-para">{activeCases}</p>
+            </div>
+          </li>
+          <li>
+            <div
+              testid="countryWideRecoveredCases"
+              className="confirmed-cases-container"
+            >
+              <p className="recovered-cases-heading">Recovered</p>
+              <img
+                src="https://res.cloudinary.com/dwgg5pyqk/image/upload/v1687427084/recovered_1_bhbphf.png"
+                alt="country wide recovered cases pic"
+              />
+              <p className="recovered-cases-para">{recoveredCases}</p>
+            </div>
+          </li>
+          <li>
+            <div
+              testid="countryWideDeceasedCases"
+              className="confirmed-cases-container"
+            >
+              <p className="deceased-cases-heading">Deceased</p>
+              <img
+                src="https://res.cloudinary.com/dwgg5pyqk/image/upload/v1687427094/breathing_1_dqkfdm.png"
+                alt="country wide deceased cases pic"
+              />
+              <p className="deceased-cases-para">{deceasedCases}</p>
+            </div>
+          </li>
+        </ul>
         <div
           testid="stateWiseCovidDataTable"
           className="stateWise-table-container"

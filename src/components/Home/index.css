@@ -103,6 +103,7 @@
   height: 92px;
   left: 230px;
   margin-top: 90px;
+  list-style: none;
   display: flex;
   justify-content: space-between;
 }

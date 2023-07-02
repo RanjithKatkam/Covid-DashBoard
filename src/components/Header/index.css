@@ -80,3 +80,51 @@
   cursor: pointer;
   border: none;
 }
+
+.toggleButton {
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  margin-right: 20px;
+}
+.small-device-toggle-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .small-device-toggle-menu {
+    display: flex;
+  }
+  .covid19 {
+    font-size: 16px;
+  }
+  .india {
+    font-size: 16px;
+  }
+  .logo-name-container {
+    width: 35%;
+  }
+  .nav-list-container {
+    display: none;
+  }
+  .small-device-nav-list-container {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .toggle-menu {
+    width: 100vw;
+  }
+  .cross-button {
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    border: none;
+  }
+  .cross-button-list {
+    margin-left: auto;
+    margin-right: 20px;
+  }
+}
